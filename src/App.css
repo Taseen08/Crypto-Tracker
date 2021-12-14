@@ -11,6 +11,7 @@
 .coin-app {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin-top: 64px;
   color: white;
@@ -52,8 +53,7 @@
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  width: 60vw;
 }
 
-.header > p {
-  padding: 0 16% 0 15%;
-}
+
