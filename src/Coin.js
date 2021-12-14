@@ -7,7 +7,6 @@ const Coin = ({
   symbol,
   price,
   volume,
-  priceChange,
   marketcap,
 }) => {
   return (
@@ -16,19 +15,12 @@ const Coin = ({
         <div className="coin">
           <img src={image} alt="crypto" />
           <h1>{name}</h1>
-          <p className="coin-symbol">{symbol}</p>
-        </div>
-        <div className="coin-data">
-          <p className="coin-price">${price}</p>
-          <p className="coin-volume">${volume.toLocaleString()}</p>
-          {priceChange < 0 ? (
-            <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
-          ) : (
-            <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
-          )}
-          <p className="coin-marketcap">${marketcap.toLocaleString()}</p>
-        </div>
+          <p style={{ "textTransform" : symbol !== "Symbol" && "uppercase"}}>{symbol}</p>
+          <p className="coin-price">{price !== "Price" && "$"}{price}</p>
+          <p className="coin-volume">{volume !== "Volume" && "$"}{volume.toLocaleString()}</p>
+          <p className="coin-marketcap">{marketcap !== "Mkt Capital" && "$"}{marketcap.toLocaleString()}</p>
       </div>
+    </div>
     </div>
   );
 };
