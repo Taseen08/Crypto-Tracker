@@ -15,7 +15,10 @@ function App() {
       .then((res) => {
         setCoins(res.data);
       })
-      .catch((error) => alert("The url has an error.Data not extracted"));
+      .catch((error) => {
+        console.log(error)
+        alert("The url has an error.Data not extracted")
+      });
   }, []);
 
   const handleChange = (e) => {
@@ -39,14 +42,9 @@ function App() {
           />
         </form>
       </div>
-      <div className="header">
-        <p>Name</p>
-        <p>Symbol</p>
-        <p>Price</p>
-        <p>Volume</p>
-        <p>24h</p>
-        <p>Mkt Capital</p>
-      </div>
+      <Coin name={"Name"} 
+      image={"https://mpng.subpng.com/20171220/wke/coin-png-image-5a3a896a229a61.45788682151378570614175614.jpg"} 
+      symbol={"Symbol"} volume={"Volume"} price={"Price"} marketcap={"Mkt Capital"} />
       {filteredCoins.map((coin) => {
         return (
           <Coin
